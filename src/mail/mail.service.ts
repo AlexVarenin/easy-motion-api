@@ -15,7 +15,7 @@ export class MailService {
     await this
       .mailerService
       .sendMail({
-        to: process.env["EMAIL"],
+        to: 'easymotion3d@gmail.com',
         from: 'noreply@easy-motion.com',
         subject: `Curstomer request [${createMailDto.name}]`,
         html: `
