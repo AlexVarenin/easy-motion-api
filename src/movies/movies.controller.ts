@@ -13,6 +13,11 @@ export class MoviesController {
     return this.moviesService.create(createMoviesDto);
   }
 
+  @Post()
+  async createAll(@Body() moviesAraa: Array<CreateMovieDto>) {
+    return this.moviesService.createAll(moviesAraa);
+  }
+
   @Get()
   async findAll(): Promise<Movie[]> {
     return this.moviesService.findAll();
