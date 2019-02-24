@@ -1,16 +1,12 @@
-import {ExpressMiddleware, Middleware, NestMiddleware} from "@nestjs/common";
+import {Injectable, NestMiddleware, MiddlewareFunction} from "@nestjs/common";
  
-@Middleware()
+@Injectable()
 export class CorsMiddleware implements NestMiddleware {
-    resolve(): ExpressMiddleware {
+    resolve(): MiddlewareFunction {
         return (req, res, next) => {
-            let allowedOrigins = ['http://localhost:3000', 'https://easymotion-studio.firebaseapp.com'];
-            if (allowedOrigins.indexOf(req.header('Origin')) !== -1) {
-                res.header('Access-Control-Allow-Origin', req.header('Origin'));
-                res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
-                res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-            }
- 
+            res.header('Access-Control-Allow-Origin', '*');
+            res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
+            res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
             next();
         };
     }
