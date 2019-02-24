@@ -1,4 +1,4 @@
-import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
+import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { MoviesModule } from './movies/movies.module';
 import { MailModule } from './mail/mail.module';
 import { HandlebarsAdapter, MailerModule } from '@nest-modules/mailer';
