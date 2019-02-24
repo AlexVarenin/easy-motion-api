@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { MoviesModule } from './movies/movies.module';
 import { MailModule } from './mail/mail.module';
 import { HandlebarsAdapter, MailerModule } from '@nest-modules/mailer';
+import {CorsMiddleware} from './middleware/cors.middleware';
 
 @Module({
   imports: [
@@ -16,4 +17,8 @@ import { HandlebarsAdapter, MailerModule } from '@nest-modules/mailer';
   ],
 })
 
-export class AppModule {}
+export class AppModule implements NestModule {
+	configure(consumer: MiddlewaresConsumer): MiddlewaresConsumer | void {
+    consumer.apply([CorsMiddleware]).forRoutes({path: '*', method: RequestMethod.ALL})
+    }
+}
