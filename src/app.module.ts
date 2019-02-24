@@ -8,9 +8,9 @@ import { HandlebarsAdapter, MailerModule } from '@nest-modules/mailer';
 	MoviesModule,
 	MailModule,
 	MailerModule.forRoot({
-		transport: 'smtps://alexvarenin@gmail.com:zdravstvyialexandr2257@smtp.gmail.com',
+		transport: 'smtps://easymotion3d@gmail.com:priveteasy@smtp.gmail.com',
 		defaults: {
-			from:'"nest-modules" <modules@nestjs.com>',
+			from:'"easy-motion" <noreply@easy-motion.com>',
 		},
 	}),
   ],
