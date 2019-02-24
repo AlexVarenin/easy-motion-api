@@ -1,7 +1,7 @@
 import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { MoviesModule } from './movies/movies.module';
 import { MailModule } from './mail/mail.module';
-import { HandlebarsAdapter, MailerModule } from '@nest-modules/mailer';
+import { MailerModule } from '@nest-modules/mailer';
 import { CorsMiddleware } from './middleware/cors.middleware';
 
 @Module({
@@ -9,7 +9,7 @@ import { CorsMiddleware } from './middleware/cors.middleware';
 	MoviesModule,
 	MailModule,
 	MailerModule.forRoot({
-		transport: process.env["TRANSPORT"],
+		transport: 'smtps://easymotion3d@gmail.com:priveteasy@smtp.gmail.com',
 		defaults: {
 			from:'"easy-motion" <noreply@easy-motion.com>',
 		},
