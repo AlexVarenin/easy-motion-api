@@ -15,7 +15,7 @@ export class MoviesService {
 
   async createAll(moviesArr: CreateMovieDto[]): Promise<Movie[]> {
     moviesArr.forEach((movie: CreateMovieDto) => {
-      const createdMovie = new this.movieModel(createMovieDto);
+      const createdMovie = new this.movieModel(movie);
       await createdMovie.save();
     });
     
