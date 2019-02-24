@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export interface Movie extents Document {
+export interface Movie extends Document {
 	readonly id: string;
 	readonly category: Array<number>;
 	readonly title: string;
