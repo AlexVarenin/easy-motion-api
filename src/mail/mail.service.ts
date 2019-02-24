@@ -12,7 +12,7 @@ export class MailService {
 
   async create(createMailDto: CreateMailDto): Promise<Mail> {
     const createdMail = new this.mailModel(createMailDto);
-    await this
+    /*await this
       .mailerService
       .sendMail({
         to: process.env.EMAIL,
@@ -23,7 +23,7 @@ export class MailService {
           <p>contacts: ${createMailDto.contacts}</p>
           <p>${createMailDto.text}</p>
         `,
-      })
+      })*/
     return await createdMail.save();
   }
 }
