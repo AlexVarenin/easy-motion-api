@@ -32,6 +32,7 @@
     "rxjs": "^6.2.2",
     "typescript": "^3.0.1",
     "ts-node": "^7.0.1"
+    "tsconfig-paths": "^3.5.0"
   },
   "devDependencies": {
     "@nestjs/testing": "^5.1.0",
