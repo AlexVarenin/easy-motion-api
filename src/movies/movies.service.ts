@@ -14,10 +14,10 @@ export class MoviesService {
   }
 
   async createAll(moviesArr: CreateMovieDto[]): Promise<Movie[]> {
-    moviesArr.forEach((movie: CreateMovieDto) => {
+    for await (let movie of moviesArr) {
       const createdMovie = new this.movieModel(movie);
       await createdMovie.save();
-    });
+    };
     
     return await this.movieModel.find().exec();
   }
