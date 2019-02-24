@@ -13,6 +13,15 @@ export class MoviesService {
     return await createdMovie.save();
   }
 
+  async createAll(moviesArr: CreateMovieDto[]): Promise<Movie[]> {
+    moviesArr.forEach((movie: CreateMovieDto) => {
+      const createdMovie = new this.movieModel(createMovieDto);
+      await createdMovie.save();
+    });
+    
+    return await this.movieModel.find().exec();
+  }
+
   async findAll(): Promise<Movie[]> {
     return await this.movieModel.find().exec();
   }

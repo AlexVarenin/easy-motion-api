@@ -14,8 +14,8 @@ export class MoviesController {
   }
 
   @Post('all')
-  async createAll(@Body() moviesAraa: Array<CreateMovieDto>) {
-    return this.moviesService.createAll(moviesAraa);
+  async createAll(@Body() moviesArr: CreateMovieDto[]) {
+    return this.moviesService.createAll(moviesArr);
   }
 
   @Get()
