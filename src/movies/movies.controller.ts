@@ -13,7 +13,7 @@ export class MoviesController {
     return this.moviesService.create(createMoviesDto);
   }
 
-  @Post()
+  @Post('all')
   async createAll(@Body() moviesAraa: Array<CreateMovieDto>) {
     return this.moviesService.createAll(moviesAraa);
   }
