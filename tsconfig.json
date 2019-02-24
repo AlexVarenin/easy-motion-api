@@ -12,7 +12,6 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "types" : ["node"]
   },
   "include": [
     "src/**/*"
