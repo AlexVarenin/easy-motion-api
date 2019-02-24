@@ -8,11 +8,12 @@ import { HandlebarsAdapter, MailerModule } from '@nest-modules/mailer';
 	MoviesModule,
 	MailModule,
 	MailerModule.forRoot({
-		transport: 'smtps://easymotion3d@gmail.com:priveteasy@smtp.gmail.com',
+		transport: process.env.TRANSPORT,
 		defaults: {
 			from:'"easy-motion" <noreply@easy-motion.com>',
 		},
 	}),
   ],
 })
+
 export class AppModule {}
