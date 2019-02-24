@@ -9,7 +9,7 @@ import { CorsMiddleware } from './middleware/cors.middleware';
 	MoviesModule,
 	MailModule,
 	MailerModule.forRoot({
-		transport: 'smtps://easymotion3d@gmail.com:priveteasy@smtp.gmail.com',
+		transport: 'process.env["TRANSPORT"]',
 		defaults: {
 			from:'"easy-motion" <noreply@easy-motion.com>',
 		},
